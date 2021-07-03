@@ -1,0 +1,23 @@
+{
+  "name": "newAdvancedBot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:dev" :"cross-env NODE_ENV=development nodemon"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.26.0",
+    "cross-env": "^7.0.3",
+    "discord-buttons": "^4.0.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.9",
+    "pogger": "^0.0.8",
+    "prisma": "^2.26.0",
+    "redis": "^3.1.2",
+    "redis-cli": "^2.1.0"
+  }
+}
