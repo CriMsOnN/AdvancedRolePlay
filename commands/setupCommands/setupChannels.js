@@ -76,7 +76,7 @@ const command = async (client, message, args) => {
   const create = new MessageButton()
     .setStyle("blurple")
     .setLabel("Create Channels")
-    .setID("create");
+    .setID(`${message.channel.id}`);
 
   await message.channel.send({ component: create, embed });
 
@@ -85,8 +85,9 @@ const command = async (client, message, args) => {
       button.reply.defer();
       return;
     }
-    if (button.id === "create") {
-      button.reply.defer();
+    if (button.message.channel.id !== message.channel.id) return;
+    if (button.id === `${message.channel.id}`) {
+      console.log("run twice");
       const channelsToCreate = [
         {
           name: "Instagram",
@@ -114,7 +115,8 @@ const command = async (client, message, args) => {
         },
       ];
 
-      const category = await message.guild.channels.create(
+      console.log(button);
+      const category = await button.message.guild.channels.create(
         "RolePlay Channels",
         {
           type: "category",
@@ -123,13 +125,14 @@ const command = async (client, message, args) => {
       );
 
       channelsToCreate.forEach(async (ch) => {
-        const channel = await message.guild.channels.create(ch.name, {
+        const channel = await button.message.guild.channels.create(ch.name, {
           type: "text",
           parent: category,
         });
+
         await prisma.guild.update({
           where: {
-            guildID: message.guild.id,
+            guildID: button.message.guild.id,
           },
           data: {
             [ch.cacheName]: channel.id,
@@ -137,9 +140,12 @@ const command = async (client, message, args) => {
         });
       });
 
+      button.reply.defer();
+
       setTimeout(async () => {
         await init();
       }, 2000);
+
       message.reply("I have created all the channels");
     }
   });
@@ -150,6 +156,7 @@ module.exports = {
     name: "setup",
     label: "Setup Channels",
     aliases: [],
+    permissions: ["MANAGE_GUILD"],
     run: command,
   },
 };

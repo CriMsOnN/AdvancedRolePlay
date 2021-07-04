@@ -33,7 +33,6 @@ class BotInstance extends Client {
         for (const file of commands) {
           const { command } = require(`${commandPath}/${dir}/${file}`);
           this.commands.set(command.name, command);
-          this.logger.info(`[${command.label.toUpperCase()}] registered [✔]`);
 
           if (command.aliases.length !== 0) {
             command.aliases.forEach((alias) => {
@@ -52,12 +51,10 @@ class BotInstance extends Client {
       const { event } = await require(`${eventPath}/${file}`);
 
       this.events.set(event.name, event);
-      this.logger.info(`[${event.name.toUpperCase()}] registered [✔]`);
       this.on(event.name, event.run.bind(null, this));
     });
 
     await init();
-
     await this.login(TOKEN);
   }
 }
