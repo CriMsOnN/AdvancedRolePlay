@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start:dev" :"cross-env NODE_ENV=development nodemon"
+    "start:dev": "cross-env NODE_ENV=development nodemon"
   },
   "dependencies": {
     "@prisma/client": "^2.26.0",

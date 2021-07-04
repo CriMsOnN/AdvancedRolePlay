@@ -26,6 +26,7 @@ model Guild {
   twitterChannel      String?
   cargrChannel        String?
   logsChannel         String?
+  wfs                 String?
   serverIP            String?
   welcomeLeaveChannel String?
   muteRoleID          String?
