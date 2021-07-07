@@ -5,6 +5,7 @@
 ## Dependencies
 
 - Discord.js
+- Prisma
 - Docker
 - Postgresql
 - Redis server for caching values
