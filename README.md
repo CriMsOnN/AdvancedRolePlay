@@ -49,6 +49,9 @@ Caching is not perfect
 
 voiceStateUpdate event is not ready yet
 
+Players with back and next buttons + pages
+![](https://imgur.com/iFj1U8i.png)
+
 ## LICENSE
 
 Copyright (C) 2021 Cr1MsOn
