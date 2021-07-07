@@ -44,6 +44,9 @@
 - `!warning @user`
 - `!removewarning @user`
 
+When you setup all the role play channels it will automatically delete any msg from this channels and send it as embed with the channel name.
+Caching is not perfect
+
 voiceStateUpdate event is not ready yet
 
 ## LICENSE
