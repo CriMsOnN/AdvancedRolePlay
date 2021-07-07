@@ -11,7 +11,7 @@
 
 ## Setup
 
-- ` git clone https://github.com/CriMsOnN/advancedroleplay.git advancedroleplay`
+- ` git clone https://github.com/CriMsOnN/AdvancedRolePlay.git AdvancedRolePlay`
 - `cd advancedroleplay`
 - `create a .env file`
 - - `DATABASE_URL="postgresql url"`
