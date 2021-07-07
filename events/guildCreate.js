@@ -10,7 +10,7 @@ const event = async (client, guild) => {
   });
   const id = guild.ownerID;
   guild.owner?.send(
-    "Thanks for inviting me to your guild! You default settings have been saved to my database\n If you want to see my commands type ~help"
+    "Thank for inviting me to your guild! You default settings have been saved to my database\n If you want to see my commands type ~help"
   );
   await init();
 };
